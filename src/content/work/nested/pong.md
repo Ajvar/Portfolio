@@ -1,7 +1,7 @@
 ---
 title: Pong
 publishDate: 2020-03-04 00:00:00
-img: /assets/stock-3.jpg
+img: /assets/Pong.png
 img_alt: Pong game
 description: |
   We developed a pong game using websockets

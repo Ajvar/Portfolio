@@ -1,15 +1,17 @@
 ---
-title: Markdown Mystery Tour
+title: Penpals
 publishDate: 2020-03-02 00:00:00
 img: /assets/stock-1.jpg
-img_alt: Iridescent ripples of a bright blue and pink liquid
+img_alt: An AI companion to help you learn any language
 description: |
-  We designed a whodunnit-style game to introduce Markdown formatting. Suspense — suspicion — syntax!
+  I designed an AI companion to help you learn any language
 tags:
-  - Design
+  - AI
   - Dev
-  - User Testing
+  - Learning
 ---
+
+#Penpals
 
 ## Level-two heading
 
