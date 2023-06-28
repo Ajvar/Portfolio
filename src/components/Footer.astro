@@ -1,9 +1,12 @@
 ---
 import Icon from './Icon.astro';
+import LanguagePicker from '../components/LanguagePicker.astro';
+
 const currentYear = new Date().getFullYear();
 ---
 
 <footer>
+	<LanguagePicker />
 	<div class="group">
 		<p>&copy; {currentYear} Joscelyn Cueille</p>
 	</div>

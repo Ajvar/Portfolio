@@ -13,8 +13,5 @@ tags:
 
 # Penpals
 
-## Level-two heading
-
-> Tell me and I forget. Teach me and I remember. Involve me and I learn.
-
-
+Penpals is a project that aims to leverage AI to help anyone to learn any new language.
+It was a challenge I set to myself to learn Nextjs Trpc and prisma.
