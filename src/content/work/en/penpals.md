@@ -9,6 +9,7 @@ tags:
   - AI
   - Dev
   - Learning
+lang : en
 ---
 
 # Penpals

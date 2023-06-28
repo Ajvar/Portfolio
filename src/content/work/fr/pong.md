@@ -9,6 +9,7 @@ tags:
   - Jeu
   - Dev
   - Travail d'équipe
+lang : fr
 ---
 
 

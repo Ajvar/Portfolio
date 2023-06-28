@@ -8,21 +8,21 @@ import Hero from "../../../components/Hero.astro";
 import Icon from "../../../components/Icon.astro";
 import Pill from "../../../components/Pill.astro";
 
-
 export async function getStaticPaths() {
-  const pages = await getCollection('work')
+  const pages = await getCollection("work");
 
-  const paths = pages.map(page => {
-    const [lang, ...slug] = page.slug.split('/');
-    return { params: { lang, slug: slug.join('/') || undefined }, props: page }
-  })
+  const paths = pages.map((page) => {
+    const [lang, ...psp] = page.slug.split("/");
+    const tst = psp.join("?");
+    return { params: { slug: psp.join("/") }, props: { page, tst } };
+  });
 
   return paths;
 }
 
-const { lang, slug } = Astro.params;
-const page = Astro.props;
-const formattedDate = page.data.date.toLocaleString(lang);
+const { slug } = Astro.params;
+const lang = "fr";
+const { page, tst } = Astro.props;
 
 const { Content } = await page.render();
 ---
