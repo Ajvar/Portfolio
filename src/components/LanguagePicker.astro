@@ -1,11 +1,16 @@
 ---
 import { getLangFromUrl } from "../i18n/utils";
 
-import { languages } from '../i18n/ui';
+import { languages } from "../i18n/ui";
 const currentLanguage = getLangFromUrl(Astro.url);
+const opposite = currentLanguage === "fr" ? "en" : "fr";
+const img =
+  currentLanguage === "fr"
+    ? "../../assets/icons/great-britain-32.png"
+    : "../../assets/icons/france-32.png";
 let url = Astro.url.pathname.split("/").slice(2).join("/");
-if (url !== "")
-  url = "/" + url;
+if (url !== "") url = "/" + opposite + "/" + url;
+else url = "/" + opposite;
 console.log(url);
 
 interface languageMapping {
@@ -24,28 +29,37 @@ const { pathname } = Astro.url;
 const { showFlag = false, languageMapping, ...attributes } = Astro.props;
 ---
 
-<!-- <select onchange="location = this.value;" {...attributes}>
-  {
-    supportedLanguages.map((supportedLanguage: string) => {
-      const flag = showFlag ? localeEmoji(supportedLanguage) + " " : "";
+<a id="lang-switcher" href={url} class="language-switcher">
+  <img id="lang-img" src={img} class="language-switcher" alt={`Change to ${opposite}`} />
+</a>
 
-      let nativeName = "";
+<script>
+  // Get references to our elements.
+  const button = document.getElementById('lang-switcher') as HTMLAnchorElement;
+  const img = document.getElementById('lang-img') as HTMLImageElement;
 
-      const label = flag + nativeName;
+  // Check if the elements exist.
+  if (button && img) {
+    // Add click event listener to button.
+    button.addEventListener('click', (event) => {
+      // Prevent default behaviour of link.
+      event.preventDefault();
 
-      return (
-        <option value={value} selected={supportedLanguage === currentLanguage}>
-          {label}
-        </option>
-      );
-    })
+      // Get the current language from the URL.
+      const currentLang = button.href.split('/')[1];
+
+      // Determine the new language.
+      const newLang = currentLang === 'en' ? 'fr' : 'en';
+      const oldhref = button.href;
+      // Update the href attribute.
+      button.href = button.href.replace(`/${currentLang}/`, `/${newLang}/`);
+
+      // Update the img src attribute.
+      img.src = currentLang === 'en' 
+        ? '../../assets/icons/france-32.png' 
+        : '../../assets/icons/great-britain-32.png';
+        window.location.href = oldhref;
+    });
+
   }
-</select> -->
-
-<ul>
-  {Object.entries(languages).map(([lang, label]) => (
-    <li>
-      <a href={`/${lang}${url}`}>{label}</a>
-    </li>
-  ))}
-</ul>
+</script>
