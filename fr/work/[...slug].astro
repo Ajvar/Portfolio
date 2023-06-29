@@ -10,20 +10,21 @@ import Pill from "../../../components/Pill.astro";
 
 
 export async function getStaticPaths() {
-  const pages = await getCollection('work')
+  const pages = await getCollection('work', ({data}) => {return data.lang === "fr"})
 
   const paths = pages.map(page => {
     const [lang, ...slug] = page.slug.split('/');
+    console.log("slug: ", slug);
     return { params: { lang, slug: slug.join('/') || undefined }, props: page }
   })
-
+  console.log(paths);
   return paths;
 }
 
 const { lang, slug } = Astro.params;
 const page = Astro.props;
-const formattedDate = page.data.date.toLocaleString(lang);
-
+/* const formattedDate = page.data.date.toLocaleString(lang);
+ */
 const { Content } = await page.render();
 ---
 
