@@ -21,9 +21,9 @@ export const ui = {
   fr: {
     "nav.home": "Accueil",
     "nav.about": "À propos",
-    "nav.work" : "Projets,",
+    "nav.work" : "Projets",
     "Send Me a Message" :"Contactez Moi",
-    "Interested in working together?" : "Vous souhaitez qu'on travaille ensemble ?",
+    "Interested in working together?" : "Vous souhaitez qu'on travailler avec moi ?",
     "Proficient from the back to the front." : "Experience en frontend et backend",
     "Edge technologies" : "Technologies modernes",
     "Want to try something new ? I can help you implement the latest technos (exploring Qwik atm)." : "Envie de tester de nouvelles choses ? Je vous aide à implémenter des technologies modernes. J'explore Qwik en ce moment !",

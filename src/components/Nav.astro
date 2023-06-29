@@ -45,7 +45,6 @@ const iconLinks: { label: string; href: string; icon: IconProps["icon"] }[] = [
     <ul class="nav-items">
       {
         textLinks.map(({ label, href }) => (
-          console.log("href: ", href, )
           <li>
             <a
               aria-current={Astro.url.pathname === href}
