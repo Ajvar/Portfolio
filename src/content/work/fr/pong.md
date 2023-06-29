@@ -15,7 +15,7 @@ lang : fr
 
 # ft_transcendance 🏓
 ## Introduction
-ft_transcendance est un projet étudiant de l'école 42, mettant en valeur nos compétences en développement web et notre capacité à créer des expériences innovantes et divertissantes. Ce projet est notre première tentative de construction d'une application web complète, et nous avons utilisé des technologies modernes telles que Typescript, React, Nestjs et PostgreSQL pour le concrétiser.
+ft_transcendance est un projet de l'école 42, mettant en valeur nos compétences en développement web et notre capacité à créer des expériences innovantes et divertissantes. Ce projet est notre première tentative de construction d'une application web complète, et nous avons utilisé des technologies modernes telles que Typescript, React, Nestjs et PostgreSQL pour le concrétiser.
 
 ## Aperçu du projet
 ft_transcendance est un jeu de pong en ligne avec une touche spéciale ! Non seulement vous pouvez jouer au classique jeu de pong avec des amis ou des inconnus, mais vous pouvez également discuter avec eux et même envoyer des messages directs. Cela ajoute un tout nouveau niveau d'interactivité au jeu classique, en en faisant une expérience amusante et sociale.

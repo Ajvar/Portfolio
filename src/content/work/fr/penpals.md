@@ -2,11 +2,11 @@
 title: Penpals
 publishDate: 2023-06-19 00:00:00
 img: /assets/stock-1.jpg
-img_alt: An AI companion to help you learn any language
+img_alt: Penpal
 description: |
-  I designed an AI companion to help you learn any language
+  J'ai créé un correspondant intelligent qui vous permet d'apprendre une langue !
 tags:
-  - AI
+  - IA
   - Dev
   - Learning
 lang: fr
@@ -14,5 +14,5 @@ lang: fr
 
 # Penpals
 
-Penpals is a project that aims to leverage AI to help anyone to learn any new language.
-It was a challenge I set to myself to learn Nextjs Trpc and prisma.
+Penpals est un projet en cours, il permet d'apprendre une nouvelle langue avec un correspondant genéré par une IA.
+C'est un challenge que je me suis fixé afin d'apprendre Nextjs Trpc and prisma.

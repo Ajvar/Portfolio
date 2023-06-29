@@ -1,5 +1,5 @@
 ---
-import { CollectionEntry, getCollection } from "astro:content";
+import {getCollection} from "astro:content";
 
 import BaseLayout from "../../../layouts/BaseLayout.astro";
 
@@ -9,20 +9,17 @@ import Icon from "../../../components/Icon.astro";
 import Pill from "../../../components/Pill.astro";
 
 export async function getStaticPaths() {
-  const pages = await getCollection("work");
+  const pages = await getCollection("work", ({data}) => {return data.lang === "en"});
 
   const paths = pages.map((page) => {
-    const [lang, ...psp] = page.slug.split("/");
-    const tst = psp.join("?");
-    return { params: { slug: psp.join("/") }, props: { page, tst } };
+    const [lang, ...slug] = page.slug.split("/");
+    return { params: { slug: slug.join("/") }, props: { page } };
   });
-
   return paths;
 }
 
 const { slug } = Astro.params;
-const lang = "fr";
-const { page, tst } = Astro.props;
+const { page } = Astro.props;
 
 const { Content } = await page.render();
 ---
