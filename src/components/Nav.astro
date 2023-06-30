@@ -58,8 +58,8 @@ const iconLinks: { label: string; href: string; icon: IconProps["icon"] }[] = [
                 "link",
                 {
                   active:
-                    Astro.url.pathname === href ||
-                    (href !== "/" + lang &&
+                    Astro.url.pathname === href + "/" ||
+                    (href !== "/"  &&
                       Astro.url.pathname.startsWith(href + lang)),
                 },
               ]}
