@@ -17,7 +17,11 @@ const textLinks: { label: string; href: string }[] = [
 
 /** Icon links to social media — edit these with links to your profiles! */
 const iconLinks: { label: string; href: string; icon: IconProps["icon"] }[] = [
-  { label: "Twitter", href: "https://twitter.com/JoeSlayn", icon: "twitter-logo" },
+  {
+    label: "Twitter",
+    href: "https://twitter.com/JoeSlayn",
+    icon: "twitter-logo",
+  },
   { label: "GitHub", href: "https://github.com/JoeSlayn", icon: "github-logo" },
 ];
 ---
@@ -47,12 +51,12 @@ const iconLinks: { label: string; href: string; icon: IconProps["icon"] }[] = [
       {
         textLinks.map(({ label, href }) => (
           <li>
+            {"href " + href + " path " + Astro.url.pathname}
             <a
               aria-current={Astro.url.pathname === href}
               class:list={[
                 "link",
                 {
-                  
                   active:
                     Astro.url.pathname === href ||
                     (href !== "/" &&
