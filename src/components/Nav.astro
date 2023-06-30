@@ -51,7 +51,6 @@ const iconLinks: { label: string; href: string; icon: IconProps["icon"] }[] = [
       {
         textLinks.map(({ label, href }) => (
           <li>
-            {"href " + href + " path " + Astro.url.pathname}
             <a
               aria-current={Astro.url.pathname === href}
               class:list={[
@@ -59,8 +58,7 @@ const iconLinks: { label: string; href: string; icon: IconProps["icon"] }[] = [
                 {
                   active:
                     Astro.url.pathname === href ||
-                    (href !== "/"  &&
-                      Astro.url.pathname.startsWith(href + lang) || href === "/" + lang && Astro.url.pathname === "/"+lang+"/"),
+                    ( href === "/" + lang && Astro.url.pathname === "/"+lang+"/"),
                 },
               ]}
               href={href}
