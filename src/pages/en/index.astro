@@ -36,8 +36,11 @@ const projects = (
           tagline="I am a Creative Developer currently based in Paris, France."
           align="start"
         >
-          <div class="roles">
-            <Pill><Icon icon="code" size="1.33em" /> Developer</Pill>
+          <div class="roles" >
+            <div id="pill-component">
+
+              <Pill><Icon icon="code" size="1.33em" /> Check out my resume</Pill>
+            </div>
           </div>
         </Hero>
 
@@ -88,15 +91,28 @@ const projects = (
 </BaseLayout>
 
 <style>
+
+@keyframes float {
+  0% { transform: translate(0, 0); }
+  50% { transform: translate(-5px, -5px); }
+  100% { transform: translate(0, 0); }
+}
+
+#pill-component {
+  cursor: pointer;
+  transition: transform 0.3s ease, opacity 0.3s ease; 
+  
+}
+
+#pill-component:hover {
+  transform: scale(1.1) ;
+  opacity: 0.8;
+}
   .hero {
     display: flex;
     flex-direction: column;
     align-items: center;
     gap: 2rem;
-  }
-
-  .roles {
-    display: none;
   }
 
   .hero img {
@@ -230,3 +246,13 @@ const projects = (
     }
   }
 </style>
+
+<script>
+  window.addEventListener('DOMContentLoaded', (event) => {
+    const pill = document.getElementById('pill-component')!;
+
+    pill.addEventListener('click', () => {
+      window.open('/public/resume-Joscelyn-Cueille.pdf', '_blank');
+    });
+  });
+</script>
